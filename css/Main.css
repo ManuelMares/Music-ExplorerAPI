@@ -1,0 +1,1070 @@
+@import url('https://fonts.googleapis.com/css2?family=Trispace:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+*{
+    padding: 0px;
+    margin:0;
+    box-sizing: border-box;
+}
+
+
+
+:root{
+    --color-primario: #d1c5c5;
+    --color-secundario: #f5f4f4;
+    --color-terciario: #c2c5c5;
+    --color-cuarto: #2a2e2e;
+    --oscuro-transparente: #000000b2;
+    --oscuro-transparente2: #2ceb65cb;
+
+    --azul-primario: #6AA6EA;
+    --azul-secundario: #33b5e5;
+    --azul-terciario: #0099cc;
+    --azul-cuarto: #0d7192;
+
+    --rojo-primario: #eb4848;
+    --rojo-secundario: #e22828;
+    --rojo-terciario: #ca0000;
+
+    --sombra-caja: 0px 10px 20px -5px var(--oscuro-transparente);
+    --sombra-caja-azul: 0px 10px 20px -5px var(--azul-terciario);
+
+
+    --sombra-boton: 0px 0px 5px 0px var(--oscuro-transparente);
+    --sombra-caja-interna-gris: 0px -15px 20px -20px var(--oscuro-transparente) inset;
+    --sombra-caja-interna-azul: 0px -15px 20px -20px var(--azul-terciario) inset;
+    --sombra-caja-interna-verde: 0px -15px 20px -20px #069B17 inset;
+
+
+    --gradiente-gris-PrimarioTerciario: linear-gradient(to bottom right, #ffffff 0%, #e2e4e4 100%);
+    --gradiente-GrisAzul: linear-gradient(to bottom right, #6AA6EA 0%, #e2e4e4 100%);
+    --gradiente-GrisRojo: linear-gradient(to bottom right, #eb4848 0%, #e2e4e4 100%);
+
+    --gradiente-azul-PrimarioSecundario: linear-gradient(to bottom right, #6AA6EA 0%, #2d79d1 100%);
+    --gradiente-azul-PrimarioTerciario: linear-gradient(to bottom right, #6AA6EA 0%, #0b51a1 100%);
+
+    --gradiente-rojo-PrimarioSecundario: linear-gradient(to bottom right, #eb4848 0%, #e22828 100%);
+    --gradiente-rojo-PrimarioTerciario: linear-gradient(to bottom right, #eb4848 0%, #ca0000 100%);
+}
+
+
+.container_FondoOscuro{
+    background-image: url("../Resources/low_contrast_linen_@2X.png");
+}
+
+.barra_FondoOscuro{    
+    background-image: url("../Resources/low_contrast_linen_@2X.png");
+}
+
+.resultado_fondoOscuro{
+    background-image: url("../Resources/grey_wash_wall_@2X.png");
+}
+
+.piePagina_fondoOscuro{
+    background-image: url("../Resources/grey_wash_wall_@2X.png");
+
+}
+
+
+
+.container_FondoClaro{
+    background: rgb(71,3,3);
+    background: linear-gradient(225deg, rgba(71,3,3,1) 0%, rgba(121,9,73,1) 35%, rgba(198,2,2,1) 100%);
+}
+
+.barra_FondoClaro{    
+    background: rgb(71,3,3);
+    background: linear-gradient(225deg, rgba(71,3,3,1) 0%, rgba(121,9,73,1) 35%, rgba(198,2,2,1) 100%);
+}
+
+.resultado_fondoClaro{
+    background: var(--color-secundario);
+}
+
+.piePagina_fondoClaro{
+    background: var(--color-secundario);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+
+    /* Para tamaños pequeños usa width 100ch y height 100% o 100ch */
+    width: 100%;
+    height: 100%;
+}
+
+
+.containerCuerpo{
+    display:grid;
+    
+    grid-template-columns: 1fr;
+    grid-template-rows:  0.5fr 1fr 1fr;
+    grid-template-areas:
+    "barra"
+    "menu"
+    "buscador ";
+    grid-gap: 0rem;
+    
+    height: 60vh;
+    width: 100%;    
+}
+
+
+
+/*BARRA PRINCIPAL*/
+.barra{    
+    position: fixed;
+    z-index: 100;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    width: 100%;
+    height: auto; 
+}
+
+.logitpo{    
+    grid-area: barraTitutlo;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    height: auto;
+    width: 100%;
+
+    font-family: Quicksand;
+    font-weight: bolder;
+    font-size: 350%;
+    letter-spacing: 0.2rem; 
+    color: white;
+}
+
+.contenedorBoton{
+    grid-area: barraBoton;
+
+    height: auto;
+    width: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tema{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 2.5rem;  
+    width: 7rem;
+    border-radius: 10px; 
+
+    background-color: var(--azul-secundario);
+    font-weight: 500;
+    color: white;
+
+    outline:none;
+}
+
+
+.tema:hover{
+    background-color: var(--azul-terciario);
+    outline:none;
+}
+
+.tema:active{
+    background-color: var(--azul-cuarto);
+    outline:none;
+}
+.tema:focus{
+    background-color: var(--azul-cuarto);
+    outline:none;
+}
+
+
+
+
+
+/*MENÚ PRINCIPAL*/
+.menu_Principal{
+    grid-area: menu;
+
+    justify-content: space-around !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    height: 100%;
+}
+
+
+.menu{
+    outline:none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.menu_link{
+    height: auto;
+    outline:none;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--azul-secundario);
+}
+
+.menu_link:hover{
+    color: green;
+}
+
+.menu_link:active{
+    color: green;
+}
+
+.menu_texto{
+    height: auto;
+    width: auto;
+    margin-top: 0.5rem;
+    
+    font-family: Raleway;
+    font-weight: 700;
+    font-size: 120%;
+    letter-spacing: 0.1rem; 
+}
+
+.fas{
+    height: auto;
+    width: auto;
+}
+
+.BotonActivo{
+    color: green;
+}
+
+
+
+/*BUSCADOR*/
+.buscador{
+    grid-area: buscador;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    height: auto;
+    width: 100%;
+}
+
+.barraBuscador{
+    
+    display: grid;
+    grid-template-columns: 1fr 9fr 2fr;
+    grid-row: 1fr;
+    grid-template-areas: 
+    "label barra boton"
+    ;
+    grid-gap:0;
+
+    
+    width: 100%;
+    height: 2rem;
+    margin: 0 10%;
+    box-shadow: var(--sombra-caja);
+}
+
+.BarraBuscador_label{
+    grid-area: label;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    border-radius:10px 0px 0px 10px;
+
+    background-color: var(--color-terciario);
+}
+
+.BarraBuscador_barra{
+    grid-area: barra;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100% ;
+    margin: 0 !important;
+}
+
+.BarraBuscador_barra:hover{
+    box-shadow: var(--sombra-caja-interna-azul);
+    border: 1px solid var(--azul-secundario);
+
+}
+
+.BarraBuscador_boton{
+    grid-area: boton;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;  
+    border-radius:0px 10px 10px 0px; 
+
+    background-color: var(--azul-secundario);
+    font-weight: 900;
+    color: white;
+
+    outline:none;
+}
+
+.BarraBuscador_boton:hover{
+    background-color: var(--azul-terciario);
+    outline:none;
+}
+
+.BarraBuscador_boton:active{
+    background-color: var(--azul-cuarto);
+    outline:none;
+}
+.BarraBuscador_boton:focus{
+    background-color: var(--azul-cuarto);
+    outline:none;
+}
+
+
+
+
+
+/*RESULTADO*/
+
+.resultado{    
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 0.2fr 1fr 2fr;
+    grid-template-areas:
+    "mensaje mensaje"
+    "reproductor contenedor1"
+    "noticias noticias";
+    grid-gap: 2rem;
+
+    height: auto;
+    width: 100%;
+    padding: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+/*mensaje*/
+
+.mensaje{
+    grid-area: mensaje;
+
+    height: auto;
+    width: 100%;
+ 
+    font-family: Quicksand;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 200%;
+    color: var(--azul-secundario-);
+}
+
+
+
+
+
+/*reproductor*/
+.ContainerReproductor{    
+    grid-area: reproductor;
+
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    height: 100%;
+    width: 100%;
+}
+
+.ContainerReproductor_Titulo{
+    text-align: center;
+
+    height: auto;
+    width: 100%;
+
+    font-family: Raleway;
+    text-align: center;
+    font-size: 200%;
+    font-weight: 500;
+    color: black;
+    
+}
+
+.ContainerReproductor_Reproductor{
+    height: 25rem;
+    width: 100%;
+
+    background-color: var(--azul-primario);
+    box-shadow: var(--sombra-caja);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*container 1*/
+.Contenedor1{ 
+    grid-area: contenedor1;
+
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    height: 100%;
+    width: 100%;
+}
+
+.Contenedor1_Mensaje{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: auto;
+
+    font-family: Raleway;
+    text-align: center;
+    font-size: 200%;
+    font-weight: 500;
+    color: black;
+}
+
+
+
+
+
+
+.Contenedor1_Albumes{
+    display: flex; 
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    height: 25rem;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--sombra-caja);
+
+    background-color: white;
+    overflow: auto;
+    
+}
+
+.Contenedor1_Albumes::-webkit-scrollbar {display: none;} 
+
+
+.ContainerArtista_Albumes_AlbumesAlbum{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    
+    height: auto;
+    width: 10rem;
+    margin: 1rem;
+
+    color:black;
+}
+
+.ContainerArtista_Albumes_AlbumesAlbum:hover{
+    width: 10.2rem;
+    height: auto;  
+}
+
+.ContainerArtista_Albumes_AlbumesAlbum:active{
+    width: 10.2rem;
+    height: auto;
+}
+
+.ContainerArtista_Albumes_AlbumesAlbum_Portada{
+    height: auto;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    box-shadow: var(--sombra-caja);
+}
+
+
+.ContainerArtista_Albumes_AlbumesAlbum_Titulo{
+    text-align: center;
+
+    height: auto;
+    width: auto;
+
+    font-family: Raleway;
+    text-align: center;
+    font-size: 100%;
+    font-weight: 400;
+    color: var(--azul-secundario-);
+}
+
+.ContainerArtista_Albumes_AlbumesAlbum_TotalCanciones{
+    text-align: center;
+
+    height: auto;
+    width: auto;
+
+    font-family: Raleway;
+    text-align: center;
+    font-size: 100%;
+    font-weight: 400;
+}
+
+
+
+
+
+.Contenedor1_Canciones{
+    display: flex; 
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    height: 25rem;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--sombra-caja);
+
+    background-color: white;
+    overflow: auto;
+    
+}
+
+.Contenedor1_Canciones::-webkit-scrollbar {display: none;} 
+
+
+.ContainerAlbum_Canciones_CancionesContenedorLista{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    
+}
+
+
+.ContainerAlbum_Canciones_CancionesContenedorLista_Cancion{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.ContainerAlbum_Canciones_CancionesContenedorLista:hover{
+    background-color: var(--azul-secundario);
+    color: white;
+    
+}
+
+.ContainerAlbum_Canciones_CancionesContenedorLista:active{
+    background: var(--azul-cuarto);
+    color: white;
+}
+
+.ContainerAlbum_Canciones_CancionesContenedorLista_CancionTexto{
+    padding: 0.5rem 2rem;
+    font-weight: 500;
+    font-size: 110%;
+    
+    width: auto;
+    height: auto;
+
+    list-style-type:none;
+    color: black;
+}
+
+.ContainerAlbum_Canciones_CancionesContenedorLista_CancionTextoDuracion{
+    padding: 0.5rem 2rem;
+    font-weight: 500;
+    font-size: 110%;
+    
+    width: auto;
+    height: auto;
+
+    list-style-type:none;
+    color: black;
+}
+
+
+
+
+
+
+
+.Contenedor1_Letra{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+    height: 25rem;
+    width: auto;
+    background-color: white;
+    box-shadow: var(--sombra-caja);
+}
+
+.ContainerCancion_LetraTitulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: auto;
+
+    font-weight: 600;
+    font-size: 120%;
+    color: black; 
+
+}
+
+.ContainerCancion_LetraDescripcion{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    height: auto;
+    width: 100%;
+    overflow: auto;
+
+    font-family: Raleway;
+    text-align: justify;
+    font-size: 100%;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*noticias*/
+
+.ContainerArtista_Wikipedia{
+    grid-area: noticias;
+
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    height: 100%;
+    width: 100%;
+}
+
+.ContainerArtista_Wikipedia_Mensaje{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: auto;
+
+    font-family: Raleway;
+    text-align: center;
+    font-size: 200%;
+    font-weight: 500;
+    color: black;
+}
+
+.ContainerArtista_Wikipedia_Articulos{
+    display: flex;
+    flex-direction: column;
+
+    height: 45rem;
+    width: 100%;
+
+    overflow: auto;
+}
+
+.ContainerArtista_Wikipedia_Articulos::-webkit-scrollbar {display: none;} 
+
+
+
+
+
+
+
+.ContainerArtista_Wikipedia_Articulos_Articulo{
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1rem;
+    
+    box-shadow: var(--sombra-caja);
+    background-color: var(--color-primario);
+    border-radius: 10px;
+}
+
+.ContainerArtista_Wikipedia_Articulos_Articulo:hover{
+    background-color: var(--color-secundario);
+    margin-bottom: 1rem;
+}
+
+.ContainerArtista_Wikipedia_Articulos_Articulo_Encabezado{
+    height: auto;
+    width: 100%;
+
+    
+    font-family: Raleway;
+    font-weight: 600;
+    font-size: 120%;
+    border-radius: 10px 10px 0 0;
+}
+
+
+.ContainerArtista_Wikipedia_Articulos_Articulo_Cuerpo{
+    width: 100%;
+    height: auto;
+
+    font-size: 120%;
+    color:black;
+}
+
+.modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; 
+    z-index: 200; 
+
+    width: 100%;
+    height: 100%;
+}
+
+.modal_ArticuloWikipedia_Container{
+    display: grid;  
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 10fr;
+    grid-template-areas:
+        "modal_ArticuloWikipedia_ArticuloEncabezado"
+        "modal_ArticuloWikipedia_ArticuloCuerpo";
+
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+    padding: 2rem;
+
+    box-shadow: 0px 10px 20px -5px var(--oscuro-transparente);
+    background-color: var(--color-primario);
+    border-radius: 5px 5px 5px 5px;
+}
+
+.modal_ArticuloWikipedia_ArticuloEncabezado{
+    grid-area: modal_ArticuloWikipedia_ArticuloEncabezado;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    width: 100%;
+    height: 100%;
+
+    font-family: Raleway;
+    font-size: 140%;
+    font-weight: 600;
+}
+
+
+.modal_ArticuloWikipedia_ArticuloEncabezado_Boton{
+    grid-area: boton;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 2rem;
+    width: 3.5rem;  
+    border-radius:3px; 
+
+    background-color: var(--azul-secundario);
+    font-weight: 700;
+    color: white;
+
+    outline:none;
+}
+
+.modal_ArticuloWikipedia_ArticuloEncabezado_Boton:hover{
+    background-color: var(--azul-terciario);
+    outline:none;
+}
+
+.modal_ArticuloWikipedia_ArticuloEncabezado_Boton:active{
+    background-color: var(--azul-cuarto);
+    outline:none;
+}
+
+.modal_ArticuloWikipedia_ArticuloEncabezado_Boton:focus{
+    background-color: var(--azul-cuarto);
+    outline:none;
+}
+
+
+.modal_ArticuloWikipedia_ArticuloCuerpo{
+    grid-area: modal_ArticuloWikipedia_ArticuloCuerpo;
+
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    
+    font-family: Raleway;
+    text-align: justify;
+    font-size: 100%;
+    font-weight: 400;
+}
+
+.modal_ArticuloWikipedia_ArticuloCuerpo_link{
+    font-size: 120%;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*barras*/
+
+
+
+.barraBuscador_Album{    
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    grid-row: 1fr;
+    grid-template-areas: 
+    "label barra"
+    ;
+    grid-gap:0;
+
+    
+    width: 30rem;
+    height: 2rem;
+    box-shadow: var(--sombra-caja);
+}
+
+.BarraBuscador_Album_Label{
+    grid-area: label;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 100%;
+    border-radius:10px 0px 0px 10px;
+    padding: 0 1rem;
+
+    background-color: var(--color-terciario);
+}
+
+.BarraBuscador_Album_Barra{
+    grid-area: barra;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 2rem;
+    border-radius:0px 10px 10px 0px !important;
+    margin: 0 !important;
+}
+
+.BarraBuscador_Album_Barra:hover{
+    box-shadow: var(--sombra-caja-interna-azul);
+    border: 1px solid var(--azul-secundario);
+
+}
+
+.BarraBuscador_Album_boton{
+    grid-area: boton;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 2.5rem;  
+    width: 6rem;
+    border-radius: 10px; 
+
+    background-color: var(--azul-secundario);
+    font-weight: 900;
+    color: white;
+
+    outline:none;
+}
+
+.BarraBuscador_Album_boton:hover{
+    background-color: var(--azul-terciario);
+    outline:none;
+}
+
+.BarraBuscador_Album_boton:active{
+    background-color: var(--azul-cuarto);
+    outline:none;
+}
+.BarraBuscador_Album_boton:focus{
+    background-color: var(--azul-cuarto);
+    outline:none;
+}
+
+
+
+
+/*MOSTRAR CANCIÓN*/
+
+
+
+
+
+@media all and (max-width: 768px) {
+    /* For mobile phones: */
+    .resultado{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 1fr 1fr 2fr;
+        grid-template-areas:
+        "mensaje"
+        "reproductor"
+        "contenedor1"
+        "noticias";
+        grid-gap: 2rem;
+    
+        height: auto;
+        width: 100%;
+        padding: 2rem;
+    }
+    
+    body{
+        width: 100ch;
+        height: 100vh;
+    }
+
+    .buscador {
+        grid-area: buscador;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        padding: 0 3rem;
+    }
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.piePagina{
+    widows: 100%;
+    height: 30vh;
+    
+}
